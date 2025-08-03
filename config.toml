@@ -1,0 +1,12 @@
+[db]
+data-source = "postgres://postgres.uzeykumsjjtdxfipjwme:ebKG0aykjZbrDYjH@aws-0-eu-west-3.pooler.supabase.com:6543/postgres"
+prepare-stmt = false
+
+[db.pool]
+enable = false
+
+[jwt]
+secret = "1c9dcefd888abb7a313c936f89c9ae82"
+
+[tg.uploads]
+encryption-key = "a2PZk76oUs2bqPalX3Oay5CIwo6ToSuM"
