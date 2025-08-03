@@ -8,8 +8,10 @@ RUN curl -sSL https://github.com/tgdrive/teldrive/releases/download/1.6.19/teldr
 
 RUN chmod +x /usr/local/bin/teldrive
 
-COPY config.toml /config.toml
+# نسخ config.toml إلى مجلد العمل
+WORKDIR /app
+COPY config.toml ./config.toml
 
 EXPOSE 8080
 
-CMD ["teldrive", "run"]
+CMD ["teldrive", "run", "--config", "./config.toml"]
