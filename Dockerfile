@@ -12,4 +12,4 @@ COPY config.toml /config.toml
 
 EXPOSE 8080
 
-CMD ["teldrive", "--config", "/config.toml"]
+CMD ["teldrive", "run"]
