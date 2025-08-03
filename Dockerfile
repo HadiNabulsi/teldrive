@@ -1,17 +1,10 @@
-FROM alpine:latest
+FROM ghcr.io/tgdrive/teldrive
 
-RUN apk add --no-cache curl tar
+# نسخ ملف الإعدادات إلى داخل الحاوية
+COPY config.toml /config.toml
 
-# تحميل Teldrive
-RUN curl -sSL https://github.com/tgdrive/teldrive/releases/download/1.6.19/teldrive-1.6.19-linux-amd64.tar.gz \
-    | tar -xz -C /usr/local/bin
-
-RUN chmod +x /usr/local/bin/teldrive
-
-# نسخ config.toml إلى مجلد العمل
-WORKDIR /app
-COPY config.toml ./config.toml
-
+# فتح المنفذ
 EXPOSE 8080
 
-CMD ["teldrive", "run", "--config", "./config.toml"]
+# تشغيل Teldrive باستخدام ملف الإعدادات
+CMD ["run", "--config", "/config.toml"]
