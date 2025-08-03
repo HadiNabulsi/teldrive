@@ -10,6 +10,7 @@ prepare-stmt = false
 enable = false
 
 [jwt]
+allowed-users = ["hadi"]
 secret = "1c9dcefd888abb7a313c936f89c9ae82"
 
 [tg.uploads]
